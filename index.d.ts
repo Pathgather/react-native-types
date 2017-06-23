@@ -1853,7 +1853,7 @@ export interface KeyboardAvoidingViewProps extends ViewProperties {
     /**
      * The style of the content container(View) when behavior is 'position'.
      */
-    contentContainerStyle?: ViewStyle
+    contentContainerStyle?: ViewStyle | ViewStyle[]
 
     /**
      * This is the distance between the top of the user screen and the react native view,
@@ -2222,7 +2222,7 @@ export interface NavigatorIOSProperties {
      * The default wrapper style for components in the navigator.
      * A common use case is to set the backgroundColor for every page
      */
-    itemWrapperStyle?: ViewStyle
+    itemWrapperStyle?: ViewStyle | ViewStyle[]
 
     /**
      * Boolean value that indicates whether the interactive pop gesture is
@@ -2609,7 +2609,7 @@ export interface PickerPropertiesIOS extends ViewProperties {
      * Style to apply to each of the item labels.
      * @platform ios
      */
-    itemStyle?: ViewStyle,
+    itemStyle?: ViewStyle | ViewStyle[]
 }
 
 export interface PickerPropertiesAndroid extends ViewProperties {
@@ -2692,7 +2692,7 @@ export interface PickerStatic extends React.ComponentClass<PickerProperties> {
  */
 export interface PickerIOSProperties extends ViewProperties {
 
-    itemStyle?: TextStyle
+    itemStyle?: TextStyle | TextStyle[]
     onValueChange?: ( value: string | number ) => void
     selectedValue?: string | number
 }
@@ -3350,7 +3350,7 @@ export interface ImageProperties extends ImagePropertiesIOS, ImagePropertiesAndr
      *
      * Style
      */
-    style?: ImageStyle;
+    style?: ImageStyle | ImageStyle[];
 
     /**
      * A unique identifier for this element to be used in UI Automation testing scripts.
@@ -3427,7 +3427,7 @@ export interface FlatListProperties<ItemT> {
     /**
      * Optional custom style for multi-item rows generated when numColumns > 1
      */
-    columnWrapperStyle?: ViewStyle
+    columnWrapperStyle?: ViewStyle | ViewStyle[]
 
     /**
      * For simplicity, data is just a plain array. If you want to use something else,
@@ -4546,7 +4546,7 @@ export interface NavigatorProperties {
     /**
      * Styles to apply to the container of each scene
      */
-    sceneStyle?: ViewStyle
+    sceneStyle?: ViewStyle | ViewStyle[]
 
 }
 
@@ -4711,19 +4711,19 @@ export namespace NavigatorStatic {
         },
         Stages: {
             Left: {
-                Title: FlexStyle
-                LeftButton: FlexStyle
-                RightButton: FlexStyle
+                Title: FlexStyle | FlexStyle[]
+                LeftButton: FlexStyle | FlexStyle[]
+                RightButton: FlexStyle | FlexStyle[]
             },
             Center: {
-                Title: FlexStyle
-                LeftButton: FlexStyle
-                RightButton: FlexStyle
+                Title: FlexStyle | FlexStyle[]
+                LeftButton: FlexStyle | FlexStyle[]
+                RightButton: FlexStyle | FlexStyle[]
             },
             Right: {
-                Title: FlexStyle
-                LeftButton: FlexStyle
-                RightButton: FlexStyle
+                Title: FlexStyle | FlexStyle[]
+                LeftButton: FlexStyle | FlexStyle[]
+                RightButton: FlexStyle | FlexStyle[]
             },
         }
     }
@@ -4742,12 +4742,12 @@ export namespace NavigatorStatic {
         navigator?: Navigator
         routeMapper?: NavigationBarRouteMapper
         navState?: NavState
-        navigationStyles?: NavigationBarStyle
+        navigationStyles?: NavigationBarStyle | NavigationBarStyle[]
         style?: ViewStyle | ViewStyle[]
     }
 
     export interface NavigationBarStatic extends React.ComponentClass<NavigationBarProperties> {
-        Styles: NavigationBarStyle
+        Styles: NavigationBarStyle | NavigationBarStyle[]
         StylesAndroid: NavigationBarStyle;
         StylesIOS: NavigationBarStyle;
 
@@ -4785,7 +4785,7 @@ export namespace NavigatorStatic {
     }
 
     export interface BreadcrumbNavigationBarStatic extends React.ComponentClass<BreadcrumbNavigationBarProperties> {
-        Styles: BreadcrumbNavigationBarStyle
+        Styles: BreadcrumbNavigationBarStyle | BreadcrumbNavigationBarStyle[]
 
         immediatelyRefresh(): void
     }
@@ -5848,7 +5848,7 @@ export interface ScrollViewProperties extends ViewProperties, ScrollViewProperti
      *     }
      *   });
      */
-    contentContainerStyle?: ViewStyle
+    contentContainerStyle?: ViewStyle | ViewStyle[]
 
     /**
      * When true the scroll view's children are arranged horizontally in a row
@@ -5941,7 +5941,7 @@ export interface ScrollViewProperties extends ViewProperties, ScrollViewProperti
     /**
      * Style
      */
-    style?: ScrollViewStyle
+    style?: ScrollViewStyle | ScrollViewStyle[]
 
     /**
      * A RefreshControl component, used to provide pull-to-refresh
@@ -7227,7 +7227,7 @@ export interface StatusBarPropertiesIOS {
     /**
      * Sets the color of the status bar text.
      */
-    barStyle?: StatusBarStyle
+    barStyle?: StatusBarStyle | StatusBarStyle[]
 
     /**
      * If the network activity indicator should be visible.
@@ -8113,7 +8113,7 @@ export interface NavigationHeaderProps extends NavigationSceneRendererProps {
     renderLeftComponent?: SubViewRenderer,
     renderRightComponent?: SubViewRenderer,
     renderTitleComponent?: SubViewRenderer,
-    style?: ViewStyle,
+    style?: ViewStyle | ViewStyle[]
     viewProps?: any,
     statusBarHeight?: number | NavigationAnimatedValue
 }
@@ -8125,8 +8125,8 @@ export interface NavigationHeaderStatic extends React.ComponentClass<NavigationH
 
 export interface NavigationHeaderTitleProps {
     children?: JSX.Element,
-    style?: ViewStyle,
-    textStyle?: TextStyle,
+    style?: ViewStyle | ViewStyle[]
+    textStyle?: TextStyle | TextStyle[]
     viewProps?: any
 }
 
@@ -8137,7 +8137,7 @@ export interface NavigationCardStackProps {
     /**
      * Custom style applied to the card.
      */
-    cardStyle?: ViewStyle
+    cardStyle?: ViewStyle | ViewStyle[]
     /**
      * Custom style interpolator for the card.
      */
@@ -8188,7 +8188,7 @@ export interface NavigationCardStackProps {
     /**
      * Custom style applied to the cards stack.
      */
-    style?: ViewStyle,
+    style?: ViewStyle | ViewStyle[]
 }
 
 // Object Instances
@@ -8258,7 +8258,7 @@ export interface NavigationCardProps extends React.ComponentClass<NavigationScen
     panHandlers?: GestureResponderHandlers,
     pointerEvents: string,
     renderScene: NavigationSceneRenderer,
-    style?: ViewStyle,
+    style?: ViewStyle | ViewStyle[]
 }
 
 export interface NavigationCardStackStatic extends React.ComponentClass<NavigationCardStackProps> {
@@ -8444,7 +8444,7 @@ export interface ARTShapeProps {
 }
 
 export interface ARTSurfaceProps {
-    style: ViewStyle,
+    style: ViewStyle | ViewStyle[]
     width: number,
     height: number
 }
