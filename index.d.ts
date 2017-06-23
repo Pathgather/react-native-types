@@ -4444,7 +4444,7 @@ export interface SceneConfig {
     };
 }
 
-export interface JumpSceneConfig extends SceneConfig {
+export type JumpSceneConfig = SceneConfig & {
     gestures: {
         jumpBack: JumpGesture
         jumpForward: JumpGesture
