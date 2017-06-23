@@ -875,7 +875,7 @@ export interface TextProperties extends TextPropertiesIOS, TextPropertiesAndroid
     /**
      * @see https://facebook.github.io/react-native/docs/text.html#style
      */
-    style?: TextStyle
+    style?: TextStyle | TextStyle[]
 
     /**
      * Used to locate this view in end-to-end tests.
@@ -1187,7 +1187,7 @@ export interface TextInputProperties extends ViewProperties, TextInputIOSPropert
     /**
      * Styles
      */
-    style?: TextStyle
+    style?: TextStyle | TextStyle[]
 
     /**
      * Used to locate this view in end-to-end tests
@@ -1705,7 +1705,7 @@ export interface ViewProperties extends ViewPropertiesAndroid, ViewPropertiesIOS
      */
     removeClippedSubviews?: boolean
 
-    style?: ViewStyle;
+    style?: ViewStyle | ViewStyle[]
 
     /**
      * Used to locate this view in end-to-end tests.
@@ -2075,7 +2075,7 @@ export interface WebViewProperties extends ViewProperties, WebViewPropertiesAndr
      */
     startInLoadingState?: boolean
 
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 
     // Deprecated: Use the `source` prop instead.
     url?: string
@@ -2265,7 +2265,7 @@ export interface NavigatorIOSProperties {
     /**
      * NOT IN THE DOC BUT IN THE EXAMPLES
      */
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 }
 
 /**
@@ -2355,7 +2355,7 @@ export interface ActivityIndicatorProperties extends ViewProperties {
      */
     size?: number | 'small' | 'large'
 
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 }
 
 export interface ActivityIndicatorStatic extends NativeMethodsMixin, React.ClassicComponentClass<ActivityIndicatorProperties> {
@@ -2395,7 +2395,7 @@ export interface ActivityIndicatorIOSProperties extends ViewProperties {
      */
     size?: 'small' | 'large'
 
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 }
 
 /**
@@ -2660,7 +2660,7 @@ export interface PickerProperties extends PickerPropertiesIOS, PickerPropertiesA
      */
     selectedValue?: any
 
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 
     /**
      * Used to locate this view in end-to-end tests.
@@ -2985,7 +2985,7 @@ export interface SliderProperties extends SliderPropertiesIOS {
     /**
      * Used to style and layout the Slider. See StyleSheet.js and ViewStylePropTypes.js for more info.
      */
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 
     /**
      * Used to locate this view in UI automation tests.
@@ -3980,7 +3980,7 @@ export interface MapViewProperties extends ViewProperties {
      * Used to style and layout the MapView.
      * See StyleSheet.js and ViewStylePropTypes.js for more info.
      */
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 
     /**
      * If false the user won't be able to pinch/zoom the map.
@@ -4215,7 +4215,7 @@ export interface TouchableWithoutFeedbackProperties extends TouchableWithoutFeed
     /**
      * //FIXME: not in doc but available in examples
      */
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 
     /**
      * When the scroll view is disabled, this defines how far your
@@ -4268,7 +4268,7 @@ export interface TouchableHighlightProperties extends TouchableWithoutFeedbackPr
     /**
      * @see https://facebook.github.io/react-native/docs/view.html#style
      */
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 
 
     /**
@@ -4743,7 +4743,7 @@ export namespace NavigatorStatic {
         routeMapper?: NavigationBarRouteMapper
         navState?: NavState
         navigationStyles?: NavigationBarStyle
-        style?: ViewStyle
+        style?: ViewStyle | ViewStyle[]
     }
 
     export interface NavigationBarStatic extends React.ComponentClass<NavigationBarProperties> {
@@ -4781,7 +4781,7 @@ export namespace NavigatorStatic {
         navigator?: Navigator
         routeMapper?: BreadcrumbNavigationBarRouteMapper
         navState?: NavState
-        style?: ViewStyle
+        style?: ViewStyle | ViewStyle[]
     }
 
     export interface BreadcrumbNavigationBarStatic extends React.ComponentClass<BreadcrumbNavigationBarProperties> {
@@ -5128,7 +5128,7 @@ export interface TabBarItemProperties extends ViewProperties {
     /**
      * React style object.
      */
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 
     /**
      * Items comes with a few predefined system icons.
@@ -7540,7 +7540,7 @@ export interface SwitchProperties extends SwitchPropertiesIOS {
      * Default value is false.
      */
     value?: boolean
-    style?: ViewStyle
+    style?: ViewStyle | ViewStyle[]
 }
 
 /**
